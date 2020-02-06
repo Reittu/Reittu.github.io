@@ -1,17 +1,505 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>In development</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Tony Reittu's personal Full Stack Web Developer portfolio. I am a Finnish programmer currently focusing on MERN stack.">
+    <meta name="keywords" content="HTML,CSS,JavaScript,React,Node,MongoDB,C#,Tony,Reittu">
+    <meta name="author" content="Tony Reittu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony Reittu | reittu.dev@gmail.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal_style.css">
+    <script>
+        // Loads either the default js or polyfilled version (bigger file size).
+        var head = document.getElementsByTagName('head')[0];
+        var js = document.createElement("script");
+        js.type = "text/javascript";
+        if (!window.fetch) js.src = "js/app.polyfill.js";
+        else {
+            js.src = "js/app.js";
+            let modalJs = document.createElement("script");
+            modalJs.src = "js/modal.js"
+            head.appendChild(modalJs);
+        } 
+        head.appendChild(js);
+    </script>
 </head>
 
 <body>
+    <svg id="curve-l" class="curve" style="left: 0" version="1.1" viewBox="0 0 225.97 361.57"
+        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <g transform="translate(340.38 67.105)">
+            <path
+                d="m-334.13-62.077s214.01 9.7295 214.69 86.935c0.65918 75.304-207.84 13.14-207.89 88.446-0.0493 75.075 208.04 13.377 207.13 88.446-0.95706 78.933-219.98 87.69-219.98 87.69"
+                fill="none" />
+        </g>
+    </svg>
+    <svg id="curve-r" class="curve" style="right: 0" version="1.1" viewBox="0 0 225.97 361.57"
+        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <g transform="translate(340.38 67.105)">
+            <path
+                d="m-334.13-62.077s214.01 9.7295 214.69 86.935c0.65918 75.304-207.84 13.14-207.89 88.446-0.0493 75.075 208.04 13.377 207.13 88.446-0.95706 78.933-219.98 87.69-219.98 87.69"
+                fill="none" />
+        </g>
+    </svg>
+    <div id="loader"></div>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<img src="./images/temp.png" id="temp"></img>
-<p>Content will be added soon.</p>
+    <nav id="navbar" class="nav">
+        <a href="#welcome-section" class="logo">
+            <svg height="45px" enable-background="new" version="1.1" viewBox="0 0 117.25 147.89"
+                xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <style>
+                    #pentagon {
+                        animation: flash 3.6s ease-in-out infinite alternate
+                    }
 
+                    @keyframes flash {
+
+                        0%,
+                        80% {
+                            stroke: black;
+                        }
+
+                        100% {
+                            stroke: white;
+                        }
+                    }
+
+                    @supports (transform-box: fill-box) {
+                        #pentagon {
+                            transform-box: fill-box;
+                            transform-origin: 50% 45.8%;
+                            animation: rotation 3.6s ease-in-out infinite alternate;
+                        }
+
+                        @keyframes rotation {
+
+                            0%,
+                            40% {
+                                stroke: black;
+                            }
+
+                            80% {
+                                stroke: white;
+                                transform: rotate(0deg) scale(1);
+                            }
+
+                            100% {
+                                transform: rotate(360deg) scale(0.5);
+                                stroke: white;
+                            }
+                        }
+                    }
+                </style>
+                <defs>
+                    <radialGradient id="radialGradient6226" cx="-226.4" cy="24.845" r="63.11"
+                        gradientTransform="matrix(-1.3229 -.42887 .325 -.9697 -511.6 -10.875)"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#0ff" offset="0" />
+                        <stop stop-color="#000080" offset="1" />
+                    </radialGradient>
+                </defs>
+                <g transform="translate(252.25 -3.4257)" stroke="#000">
+                    <path
+                        d="m-173.72 135.02c1.844-0.13493 3.3338-1.4241 4.4969-2.759 1.601-1.8642 2.1438-4.3436 2.5199-6.7069 1.7491-9.3112 5.046-18.24 8.6235-26.983 3.1525-7.4994 6.6483-14.873 10.825-21.861 3.0128-4.813 6.2958-9.4637 9.0064-14.461 0.38771-2.0081-0.54799-4.0063-1.7856-5.5378-2.331-3.0265-5.6601-5.0443-8.953-6.8688-5.631-3.1721-11.363-6.3462-16.107-10.799-6.3422-5.8111-11.426-12.8-16.504-19.697-3.4746-4.7863-6.7609-9.7344-10.733-14.134-1.7526-1.3215-4.6517-0.30938-5.2108 1.811-0.74786 2.0039-0.86147 4.1793-1.6072 6.1846-2.348 8.1834-6.4092 15.765-11.081 22.842-7.2591 11.251-16.246 21.234-25.193 31.145-3.9059 4.3742-7.9726 8.6804-11.019 13.723-1.3931 2.5667-2.4568 5.454-2.2482 8.4175 0.42834 2.9627 2.6701 5.4399 5.3788 6.5817 4.7017 2.4214 9.6898 4.2836 14.206 7.0616 12.822 7.2548 24.981 15.632 37.968 22.601 4.7292 2.6377 9.3218 5.5135 14.058 8.137 1.0747 0.53979 2.1945 0.99549 3.3589 1.3019z"
+                        fill="url(#radialGradient6226)" stroke-width="2.326" />
+                    <path id="pentagon"
+                        d="m-197.23 90.762c11.374 21.738 67.784 8.7127 55.645-12.607-14.624-25.683-47.435-30.387-68.106-9.2628-17.159 17.535 12.66 67.159 29.185 49.026 19.907-21.845 14.241-54.503-12.236-67.635-21.979-10.901-59.96 32.794-37.607 42.906 26.928 12.182 56.236-3.2982 60.544-32.538 3.5753-24.272-49.718-46.891-52.428-22.508-3.2649 29.374 20.515 52.465 49.654 47.526 24.189-4.1001 29.233-61.774 5.2053-56.817-28.946 5.9721-43.558 35.723-29.855 61.91z"
+                        fill-opacity="0" stroke-width="2.599" />
+                </g>
+                <g fill="var(--main-white)">
+                    <path
+                        d="m63.694 129.45c-1.5236 1.2045-3.6404 1.6037-5.554 1.2001-1.6796-0.34337-3.1522-1.2521-4.5314-2.1986-6.499-4.3392-13.157-8.4509-19.778-12.614-8.7435-5.4847-17.487-10.969-26.23-16.454 4.9106 5.9168 10.175 11.582 15.99 16.693 4.4245 3.8979 9.1634 7.4782 14.246 10.551 3.5197 2.1409 7.3011 3.9586 11.353 4.9436 3.1034 0.75235 6.3786 0.91186 9.5224 0.3136 1.5979-0.28878 3.2159-0.80493 4.4463-1.864 0.20367-0.16894 0.3942-0.36076 0.54979-0.56896z"
+                        stroke-width=".50088" />
+                    <g stroke-width=".26458" aria-label="TR">
+                        <path d="m22.676 108.92v24.135h-10.071v-24.135h-7.7143v-9.7234h25.474v9.7234z" />
+                        <path
+                            d="m97.66 108.3v24.755h-10.071v-33.858h12.923q5.9035 0 9.1529 2.9269 3.6215 3.2742 3.6215 8.3096 0 5.1346-4.4896 8.6568l5.8043 13.965h-10.567l-4.8865-10.914v-8.7064h0.79375q3.175 0 3.175-2.7285 0-2.4061-3.6711-2.4061z" />
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <ul class="nav-list">
+            <li>
+                <a href="#welcome-section">Home</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="welcome-section" class="welcome-section h-100vh">
+        <svg class="anim-cloud c-left" xmlns="http://www.w3.org/2000/svg" width="10%" viewBox="0 0 24 24">
+            <path
+                d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z" />
+        </svg>
+        <svg class="anim-cloud c-right" xmlns="http://www.w3.org/2000/svg" width="5%" viewBox="0 0 24 24">
+            <path
+                d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z" />
+        </svg>
+        <div class="intro-container">
+            <h1>Hello, I'm <span class="name-span">Tony Reittu</span>.</h1>
+            <p class="intro-text">
+                <span class="mobile-row"><svg class="icon-mi intro-icon">
+                        <use xlink:href="svgs/sprite.svg#icon-code"></use>
+                    </svg> Full Stack Developer </span>
+                <span class="mobile-row"><svg class="icon-mi intro-icon">
+                        <use xlink:href="svgs/sprite.svg#icon-student"></use>
+                    </svg> Student </span>
+                <span class="mobile-row"><svg class="icon-mi intro-icon">
+                        <use xlink:href="svgs/sprite.svg#icon-favorite"></use>
+                    </svg> MERN Enthusiastic</span></p>
+            <button class="btn-cta">View my work</button>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="centered-container">
+
+            <h2 class="projects-section-header" data-text="Some of my recent projects">Some of my recent projects</h2>
+
+            <div class="project-container">
+                <button class="project project-tile" data-href-demo="https://reittu.glitch.me/"
+                    data-href-github="https://github.com/Reittu/express-mongo-compilation-projects"
+                    data-title="Full Stack Compilation Project" data-keywords="node.js express mongodb mongoose bcrypt">
+                    <div class="img-container b-node"><img class="project-img" src="images/issue_tracker.png"
+                            alt="Issue Tracker API" /></div>
+                    <p class="project-title">FS Compilation Project</p>
+                    <div class="project-modal-description">
+                        <p>This compilation includes 4 CRUD projects and 6 smaller microservice miniprojects made with
+                            Node.js, Express, MongoDB and Mongoose.</p>
+                        <p>Each of the following projects also has a fully documented API:</p>
+                        <ul>
+                            <li>Anonymous Message Board</li>
+                            <li>Public Library</li>
+                            <li>Issue Tracker</li>
+                            <li>Exercise Tracker</li>
+                            <li>Stock Price Checker</li>
+                            <li>Metric-Imperial Converter</li>
+                            <li>URL Shortener</li>
+                            <li>File Analyser</li>
+                            <li>Who am I</li>
+                            <li>Timestamp</li>
+                        </ul>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://dr2k8.csb.app/"
+                    data-href-github="https://github.com/Reittu/react-redux-pomodoro" data-title="Pomodoro Clock"
+                    data-keywords="react redux javascript css">
+                    <div class="img-container b-react"><img class="project-img" src="images/pomodoro.png"
+                            alt="Pomodoro Clock" /></div>
+                    <p class="project-title">Pomodoro Clock</p>
+                    <div class="project-modal-description">
+                        <p>Pomodoro clock made with React and Redux for state management. I also have made two different
+                            versions using React Context API and
+                            regular data passing with props.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://pnvbt.csb.app/"
+                    data-href-github="https://github.com/Reittu/react-markdown-previewer"
+                    data-title="Markdown Previewer" data-keywords="react javascript css material-ui">
+                    <div class="img-container b-react"><img class="project-img" src="images/markdown_previewer.png"
+                            alt="project" />
+                    </div>
+                    <p class="project-title">Markdown Previewer</p>
+                    <div class="project-modal-description">
+                        <p>Markdown previewer made with React.</p>
+                        <p>Updates in real time as content is entered.</p>
+                        <p>You can also download the markdown version as well as the HTML output instantly.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://50eob.csb.app/"
+                    data-href-github="https://github.com/Reittu/react-drum-machine" data-title="Drum Machine"
+                    data-keywords="react javascript css">
+                    <div class="img-container b-react"><img class="project-img" src="images/drum_machine.png"
+                            alt="project" /></div>
+                    <p class="project-title">Drum Machine</p>
+                    <div class="project-modal-description">
+                        <p>Simple drum kit made with React.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://3pcsp.csb.app/"
+                    data-href-github="https://github.com/Reittu/react-calculator" data-title="React Calculator"
+                    data-keywords="react javascript css">
+                    <div class="img-container b-react"><img class="project-img" src="images/react_calculator.png"
+                            alt="project" />
+                    </div>
+                    <p class="project-title">React Calculator</p>
+                    <div class="project-modal-description">
+                        <p>Simple calculator made with React; utilizing CSS Grid for the layout.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://xw8iq.csb.app/"
+                    data-href-github="https://github.com/Reittu/react-quote-machine" data-title="Quote Machine"
+                    data-keywords="react javascript css material-ui">
+                    <div class="img-container b-react"><img class="project-img" src="images/quote_machine.png"
+                            alt="project" /></div>
+                    <p class="project-title">Quote Machine</p>
+                    <div class="project-modal-description">
+                        <p>Random quote generator. The main focus of this miniproject was Material UI and theming.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-github="https://github.com/Reittu/js-project-euler"
+                    data-title="Project Euler" data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/euler.png" alt="project" />
+                    </div>
+                    <p class="project-title">Project Euler</p>
+                    <div class="project-modal-description">
+                        <p>My take on some of the famous Project Euler problems using JavaScript.</p>
+                        <p>Project Euler is a collection of mathematical/programming problems.
+                            As of February 1st, 2020, there are currently 700 different problems.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://2550m.csb.app/"
+                    data-href-github="https://github.com/Reittu/d3js-choropleth-map" data-title="D3.js - Choropleth Map"
+                    data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/choropleth_map.png"
+                            alt="project" />
+                    </div>
+                    <p class="project-title">D3.js - Choropleth Map</p>
+                    <div class="project-modal-description">
+                        <p>Choropleth Map made with D3.js version 5 (using ES6 syntax).</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://u4ms3.csb.app/"
+                    data-href-github="https://github.com/Reittu/d3js-heat-map" data-title="D3.js - Heat Map"
+                    data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/heat_map.png" alt="project" />
+                    </div>
+                    <p class="project-title">D3.js - Heat Map</p>
+                    <div class="project-modal-description">
+                        <p>Heat map made with D3.js version 5 (using ES6 syntax).</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://xn4hr.csb.app/"
+                    data-href-github="https://github.com/Reittu/d3js-treemap-diagram"
+                    data-title="D3.js - Treemap Diagram" data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/treemap_diagram.png"
+                            alt="project" />
+                    </div>
+                    <p class="project-title">D3.js - Treemap Diagram</p>
+                    <div class="project-modal-description">
+                        <p>Treemap diagram made with D3.js version 5 (using ES6 syntax).</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://blpyq.csb.app/"
+                    data-href-github="https://github.com/Reittu/d3js-scatter-plot" data-title="D3.js - Scatter Plot"
+                    data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/scatter_plot.png"
+                            alt="project" />
+                    </div>
+                    <p class="project-title">D3.js - Scatter Plot</p>
+                    <div class="project-modal-description">
+                        <p>Scatter plot made with D3.js version 5 (using ES6 syntax).</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-demo="https://1hph7.csb.app/"
+                    data-href-github="https://github.com/Reittu/d3js-bar-chart" data-title="D3.js - Bar Chart"
+                    data-keywords="javascript">
+                    <div class="img-container b-js"><img class="project-img" src="images/bar_chart.png"
+                            alt="Bar Chart" />
+                    </div>
+                    <p class="project-title">D3.js - Bar Chart</p>
+                    <div class="project-modal-description">
+                        <p>Bar chart made with D3.js version 5 (using ES6 syntax).</p>
+                    </div>
+                </button>
+                <button class="project project-tile"
+                    data-href-demo="https://github.com/Reittu/wpf-mvvm-rename-tool/releases"
+                    data-href-github="https://github.com/Reittu/wpf-mvvm-rename-tool"
+                    data-title="WPF Bulk Renaming Tool" data-keywords="c# mvvm caliburn.micro material-ui">
+                    <div class="img-container b-csharp"><img class="project-img" src="images/rename_tool.png"
+                            alt="WPF Bulk Renaming Tool" /></div>
+                    <p class="project-title">WPF Bulk Renaming Tool</p>
+                    <div class="project-modal-description">
+                        <p>A tool for renaming files in bulk with GUI.</p>
+                        <p>Uses Caliburn.Micro as the MVVM framework.</p>
+                        <p>The standalone demo on GitHub is converted into .NET Core 3.1.</p>
+                    </div>
+                </button>
+                <button class="project project-tile" data-href-github="https://github.com/Reittu/Reittu.github.io"
+                    data-title="This Portfolio" data-keywords="javascript html css bem">
+                    <div class="img-container b-css"><img class="project-img" src="images/contrast_profile.png"
+                            alt="Tony Reittu" /></div>
+                    <p class="project-title">This Portfolio</p>
+                    <div class="project-modal-description">
+                        <p>This portfolio was made 100% by hand without external dependencies, apart from the SVGs and polyfills for older browsers.</p>
+                        <p>Most of the CSS follows generic
+                            naming convention but I also included some BEM by doing all of the modal styling with it.
+                        </p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills-section h-100vh">
+        <a href="https://github.com/Reittu" target="_blank" id="profile-link" class="link-github"
+            title="My GitHub Profile"></a>
+        <div class="skills-section-header">
+            <h2>Skills (keywords)</h2>
+            <div class="flex-container">
+                <div class="flex-column skill-column" style="flex: 2">
+                    <h3>I have been mainly focusing on</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <ul>
+                            <li>ES6</li>
+                        </ul>
+                        <li>React</li>
+                        <ul>
+                            <li>Hooks</li>
+                        </ul>
+                        <li>Node.js</li>
+                        <ul>
+                            <li>Npm</li>
+                            <li>Yarn</li>
+                        </ul>
+                        <li>Express</li>
+                        <li>MongoDB</li>
+                        <ul>
+                            <li>Mongoose</li>
+                        </ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <ul>
+                            <li>SASS</li>
+                            <li>BEM</li>
+                        </ul>
+                        <li>UX/UI/Design</li>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Inkscape</li>
+                        </ul>
+                        <li>C#</li>
+                        <ul>
+                            <li>WPF</li>
+                            <li>MVC; MVVM</li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="flex-column skill-column">
+                    <h4>... while also having gained experience with</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>Regex</li>
+                        <li>Babel</li>
+                        <li>Webpack</li>
+                        <li>TypeScript</li>
+                        <li>Jest</li>
+                        <li>PostgreSQL</li>
+                        <li>React Native</li>
+                        <li>Kotlin</li>
+                    </ul>
+                </div>
+                <div class="flex-column skill-column">
+                    <h5>... and short-term exposure to</h5>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>SOLID (OOP)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="experience" class="experience-section h-100vh">
+        <div class="experience-section-header">
+            <h2>Experience and Education</h2>
+            <div class="flex-container">
+                <div class="flex-column">
+                    <h3 class="experience-column-header">Experience</h3>
+                    <h4>Summer Project 2018 - multi-platform game (C#, Unity)</h4>
+                    <p>We, a team of three people, were tasked to build a multi-platform game meant to collect
+                        well-being data from children.</p>
+                    <p>Due to the nature of the project, we had to solve a major problem conserning the obvious legal
+                        issues.
+                        We ended up arranging a solution, where the stored data itself is anonymous but the supervisors
+                        could identify players by session start and end times.</p>
+                    <p><strong>I did most of the programming</strong> while my team members worked on general design,
+                        level design, environment, characters and animations.
+                        The project also included a lot of <strong>planning together</strong> as well as
+                        <strong>meetings and demo sessions with the client</strong>.</p>
+                    <p>I learned a lot about topics such as <strong>particle effects,
+                            materials, colliders and other game engine related subjects</strong> but above all I value
+                        the experience I got from all the meetings
+                        and working with fantastic people.
+                        I also programmed the game's login logic, which introduced me into <strong>hashing, salting,
+                            encoding and decoding</strong>.
+                        The project also depended on <strong>version control with GIT</strong> I was responsible for.
+                    </p>
+                    <p>Unfortunately, the code is confidential, but some external information about
+                        the project is available <a
+                            href="https://blog.hamk.fi/engineering/robotiikka-ja-citylaturi-onnistuivat-helteessa/"
+                            target="_blank" style="color: #7700b4">here</a> (Finnish).</p>
+                </div>
+                <div class="flex-column">
+                    <h3 class="experience-column-header">Education</h3>
+                    <h4>Bachelor of Engineering, ICT; anticipated completion December, 2020</h4>
+                    <h5>Additional certifications</h5>
+                    <img src="images/temp_cert.png" alt="FCC Certificate" class="img-certificate">
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="contact" class="contact-section h-100vh">
+        <div class="contact-section-header">
+            <h2>Got a problem to solve?</h2>
+            <h3>Get in touch!</h3>
+        </div>
+        <img src="svgs/dev.svg" alt="dev" class="img-dev">
+        <div class="contact-links">
+            <a href="https://github.com/reittu" target="_blank" class="btn-contact">
+                <svg class="icon-mi">
+                    <use xlink:href="svgs/sprite.svg#icon-github"></use>
+                </svg> GitHub</a>
+            <a href="mailto:reittu.dev@gmail.com" target="_blank" class="btn-contact">
+                <svg class="icon-mi">
+                    <use xlink:href="svgs/sprite.svg#icon-email"></use>
+                </svg> Email</a>
+            <a href="#contact" class="btn-contact" style="cursor: not-allowed; opacity: .2">
+                <svg class="icon-mi">
+                    <use xlink:href="svgs/sprite.svg#icon-linkedin"></use>
+                </svg> Linkedin</a>
+        </div>
+    </section>
+    <div class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div class="modal__header">
+                <h2 class="modal__title"></h2>
+            </div>
+            <div class="modal__body">
+                <div class="body__col col--left"></div>
+                <div class="body__col col--right"></div>
+            </div>
+            <div class="modal__footer"></div>
+        </div>
+    </div>
 </body>
+
 </html>
