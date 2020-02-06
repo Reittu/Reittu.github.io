@@ -33,8 +33,8 @@
 
         const projectLinks = `
             <div class="project-links">
-                ${demo ? '<a href="' + demo + '" target="_blank" class="btn-contact project-link"><svg class="icon-mi"><use xlink:href="sprite.svg#icon-code"></use></svg> Demo</a>' : ''}
-                ${github ? '<a href="' + github + '" target="_blank" class="btn-contact project-link"><svg class="icon-mi"><use xlink:href="sprite.svg#icon-github"></use></svg> GitHub</a>' : ''}
+                ${demo ? '<a href="' + demo + '" target="_blank" class="btn-contact project-link"><svg class="icon-mi"><use xlink:href="/svgs/sprite.svg#icon-code"></use></svg> Demo</a>' : ''}
+                ${github ? '<a href="' + github + '" target="_blank" class="btn-contact project-link"><svg class="icon-mi"><use xlink:href="/svgs/sprite.svg#icon-github"></use></svg> GitHub</a>' : ''}
             </div>
                 `
 
