@@ -1,3 +1,3 @@
-# My Portfolio
+# My Personal Portfolio
 
-Still cleaning up some things.
+Do note that the non-minified code is available under js/dev_babel_webpack directory.

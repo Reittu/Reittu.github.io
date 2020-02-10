@@ -46,4 +46,4 @@
         modal.style.display = "block";
     }
 
-})()
+})();
