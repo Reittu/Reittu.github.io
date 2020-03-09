@@ -451,6 +451,10 @@
         if (!window.fetch) js.src = "js/app.polyfilled.js";
         else js.src = "js/app.bundle.js";
         head.appendChild(js);
+
+        // Visitor logging
+        // Since 09.03.2020
+        if(window.fetch) fetch("https://reittu.glitch.me/api/visitors/new").then(res => res.json()).then(res => console.log(res));
     </script>
 </body>
 
