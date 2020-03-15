@@ -1,6 +1,7 @@
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  scrollbar-color: #fefefe #222
 }
 body {
   overflow-x: hidden;
@@ -40,6 +41,23 @@ a:focus {
 }
 .h-100vh {
   min-height: 100vh
+}
+::-webkit-scrollbar {
+  width: 16px
+}
+::-webkit-scrollbar-track {
+  background: #222
+}
+::-webkit-scrollbar-thumb {
+  background: #fefefe;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 10px
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ddd
+}
+::-webkit-scrollbar-thumb:active {
+  background: #777
 }
 .nav {
   display: -webkit-box;

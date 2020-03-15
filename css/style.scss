@@ -3,12 +3,15 @@ $gray: #252934;
 $black: #1a1a1f;
 $blue: #6fd7ff;
 $purple: #7700b4;
+$scrollthumb: #fefefe;
+$scrolltrack: #222;
 
 // General
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scrollbar-color: $scrollthumb $scrolltrack;
 }
 body {
   overflow-x: hidden;
@@ -47,6 +50,26 @@ a {
 }
 .h-100vh {
   min-height: 100vh;
+}
+
+// Special
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: $scrolltrack;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollthumb;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #777;
 }
 
 // Navigation

@@ -13,7 +13,7 @@
   animation: fade .3s ease-out
 }
 .modal__title {
-  margin: 2rem 0;
+  margin: 2rem 0
 }
 .modal__content {
   position: relative;
@@ -33,11 +33,14 @@
 }
 .body__col {
   flex: 1;
-  padding: 1rem;
+  border: .5rem solid rgba(0,0,0,.05);
+  border-radius: .5rem;
+  padding: 5px
 }
 .body__col.col--left {
   overflow: auto;
   background-color: #f5f5f5;
+  margin-right: 3px
 }
 .body__col.col--right {
   overflow: hidden;
@@ -45,7 +48,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  position: relative
 }
 .modal__close {
   position: absolute;
@@ -61,7 +64,7 @@
 }
 .modal__footer {
   margin-top: 1rem;
-  text-align: right;
+  text-align: right
 }
 .modal__keyword {
   padding: 1rem;
@@ -91,12 +94,12 @@
   }
   .modal__content {
     width: 96%;
-    max-width: 620px;
+    max-width: 620px
   }
   .modal__title {
-    font-size: 2.6rem;
+    font-size: 2.6rem
   }
   .col--left {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
   }
 }
