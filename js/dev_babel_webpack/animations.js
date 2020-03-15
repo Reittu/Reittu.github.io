@@ -13,6 +13,7 @@
 
     document.querySelector('.btn-cta').onclick = () => triggerGust(document.getElementById('projects'));
     document.addEventListener('click', clickEffect);
+    document.addEventListener('scroll', contactObserver()); // Higher order function
 
     function triggerGust(target) {
         const distanceDown = target.getBoundingClientRect().top;
@@ -32,13 +33,27 @@
     }
 
     function clickEffect(e) {
-        var d = document.createElement("div");
+        const d = document.createElement("div");
         d.className = "click-effect";
         // Use offsetTop and offsetLeft if using element's position instead of mouse's.
         d.style.top = e.clientY + "px";
         d.style.left = e.clientX + "px";
         document.body.appendChild(d);
         d.addEventListener('animationend', function () { d.parentElement.removeChild(d); }.bind(this));
+    }
+
+    // IntersectionObserver would be a better fit if this was an one-off event.
+    function contactObserver() {
+        const targetSection = document.querySelector('#contact');
+        const target = document.querySelector('.contact-animation-container');
+        function checkIntersection() {
+            const { top, height } = targetSection.getBoundingClientRect();
+            if (height - top > 100) target.classList.add('contact-visible');
+            else target.className = "contact-animation-container";
+        }
+        // Necessary due to if the page is reloaded when the section is visible
+        checkIntersection();
+        return checkIntersection;
     }
 
 })();

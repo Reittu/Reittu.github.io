@@ -18,6 +18,9 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 1.8rem;
   color: $white;
+  // Needed for IE11
+  display: flex;
+  flex-direction: column;
 }
 html,
 body {
@@ -200,21 +203,22 @@ a {
   border-bottom: 0.2rem solid $white;
   padding-bottom: 3rem;
   margin-top: 0;
-  position: relative;
   color: $white;
   text-shadow: 2px 2px #000;
-  &::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    animation: glow 5s ease-in-out infinite alternate;
-    text-shadow: 2px 2px #fff;
-    filter: drop-shadow(0 0 5px #fff);
-  }
 }
-
+.glow {
+  position: relative;
+}
+.glow::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: glow 5s ease-in-out infinite alternate;
+  text-shadow: 2px 2px #fff;
+  filter: drop-shadow(0 0 5px #fff);
+}
 // Band-aid for old Edge (pre-chromium)
 @supports (-ms-ime-align: auto) {
   .projects-section-header::before {
@@ -392,7 +396,15 @@ a {
   text-align: center;
   padding: 0 2rem;
   background: $black;
+  background-image: url(/svgs/circuit-board.svg);
   overflow: hidden;
+}
+.contact-animation-container {
+  transform: translate(-300px, 100px) rotate(180deg);
+  transition: transform 1.2s cubic-bezier(0.75, -0.5, 0.3, 1.55);
+}
+.contact-visible {
+  transform: none;
 }
 .contact-section-header {
   > h2 {
@@ -436,8 +448,12 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: -300px;
+  margin-top: -260px;
   z-index: -1;
+}
+.contact-visible .img-dev {
+  animation: laptop 5.2s ease-in-out alternate infinite;
 }
 
 // Misc. elements (mainly animation related)
@@ -520,11 +536,11 @@ a {
 @keyframes glow {
   0%,
   35% {
-    clip-path: inset(0 100% 0 -20%);
+    clip-path: inset(0 101% 0 -20%);
   }
-  100%,
-  65% {
-    clip-path: inset(0 -20% 0 100%);
+  65%,
+  100% {
+    clip-path: inset(0 -20% 0 101%);
   }
 }
 @keyframes gust {
@@ -538,6 +554,15 @@ a {
   100% {
     stroke-width: 0;
     stroke-dashoffset: 160;
+  }
+}
+
+@keyframes laptop {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }
 
@@ -621,5 +646,8 @@ a {
   }
   .centered-container {
     width: 100%;
+  }
+  .contact-links {
+    flex-direction: column;
   }
 }

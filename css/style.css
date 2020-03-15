@@ -7,7 +7,14 @@ body {
   overflow-x: hidden;
   font-family: Roboto,sans-serif;
   font-size: 1.8rem;
-  color: #f0f0f0
+  color: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column
 }
 body,
 html {
@@ -215,11 +222,13 @@ a:focus {
   border-bottom: .2rem solid #f0f0f0;
   padding-bottom: 3rem;
   margin-top: 0;
-  position: relative;
   color: #f0f0f0;
   text-shadow: 2px 2px #000
 }
-.projects-section-header::before {
+.glow {
+  position: relative
+}
+.glow::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -426,7 +435,20 @@ a:focus {
   text-align: center;
   padding: 0 2rem;
   background: #1a1a1f;
+  background-image: url(/svgs/circuit-board.svg);
   overflow: hidden
+}
+.contact-animation-container {
+  -webkit-transform: translate(-300px,100px) rotate(180deg);
+  transform: translate(-300px,100px) rotate(180deg);
+  -webkit-transition: -webkit-transform 1.2s cubic-bezier(.75,-.5,.3,1.55);
+  transition: -webkit-transform 1.2s cubic-bezier(.75,-.5,.3,1.55);
+  transition: transform 1.2s cubic-bezier(.75,-.5,.3,1.55);
+  transition: transform 1.2s cubic-bezier(.75,-.5,.3,1.55),-webkit-transform 1.2s cubic-bezier(.75,-.5,.3,1.55)
+}
+.contact-visible {
+  -webkit-transform: none;
+  transform: none
 }
 .contact-section-header > h2 {
   font-size: 6rem
@@ -473,9 +495,13 @@ a:focus {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  margin-left: -300px;
+  margin-top: -260px;
   z-index: -1
+}
+.contact-visible .img-dev {
+  -webkit-animation: laptop 5.2s ease-in-out alternate infinite;
+  animation: laptop 5.2s ease-in-out alternate infinite
 }
 #loader {
   width: 100vw;
@@ -591,25 +617,25 @@ a:focus {
 @-webkit-keyframes glow {
   0%,
   35% {
-    -webkit-clip-path: inset(0 100% 0 -20%);
-    clip-path: inset(0 100% 0 -20%)
+    -webkit-clip-path: inset(0 101% 0 -20%);
+    clip-path: inset(0 101% 0 -20%)
   }
   100%,
   65% {
-    -webkit-clip-path: inset(0 -20% 0 100%);
-    clip-path: inset(0 -20% 0 100%)
+    -webkit-clip-path: inset(0 -20% 0 101%);
+    clip-path: inset(0 -20% 0 101%)
   }
 }
 @keyframes glow {
   0%,
   35% {
-    -webkit-clip-path: inset(0 100% 0 -20%);
-    clip-path: inset(0 100% 0 -20%)
+    -webkit-clip-path: inset(0 101% 0 -20%);
+    clip-path: inset(0 101% 0 -20%)
   }
   100%,
   65% {
-    -webkit-clip-path: inset(0 -20% 0 100%);
-    clip-path: inset(0 -20% 0 100%)
+    -webkit-clip-path: inset(0 -20% 0 101%);
+    clip-path: inset(0 -20% 0 101%)
   }
 }
 @-webkit-keyframes gust {
@@ -636,6 +662,26 @@ a:focus {
   100% {
     stroke-width: 0;
     stroke-dashoffset: 160
+  }
+}
+@-webkit-keyframes laptop {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+  }
+}
+@keyframes laptop {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
   }
 }
 @media (max-width:1250px) {
@@ -726,5 +772,11 @@ a:focus {
   }
   .centered-container {
     width: 100%
+  }
+  .contact-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
   }
 }
