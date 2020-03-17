@@ -401,10 +401,12 @@ a {
 }
 .contact-animation-container {
   transform: translate(-300px, 100px) rotate(180deg);
-  transition: transform 1.2s cubic-bezier(0.75, -0.5, 0.3, 1.55);
+  transition: all 1.2s cubic-bezier(0.75, -0.5, 0.3, 1.55);
+  opacity: 0;
 }
 .contact-visible {
   transform: none;
+  opacity: 1;
 }
 .contact-section-header {
   > h2 {
