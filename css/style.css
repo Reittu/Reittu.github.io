@@ -225,6 +225,9 @@ a:focus {
   color: #f0f0f0;
   text-shadow: 2px 2px #000
 }
+.fcc-sidenote {
+  font-size: 1rem
+}
 .glow {
   position: relative
 }
