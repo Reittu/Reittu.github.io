@@ -92,9 +92,9 @@
             <h2 class="projects-section-header glow" data-text="Some of my recent projects">Some of my recent projects</h2>
 
             <div class="project-container">
-                <button class="project project-tile" data-href-demo="https://reittu.azurewebsites.net/"
+                <button class="project project-tile" data-href-demo="https://reittu.glitch.com/"
                     data-href-github="https://github.com/Reittu/express-mongo-compilation-projects"
-                    data-title="Full Stack Compilation Project" data-keywords="node.js express mongodb mongoose bcrypt azure">
+                    data-title="Full Stack Compilation Project" data-keywords="node.js express mongodb mongoose jest bcrypt">
                     <div class="img-container b-node"><img class="project-img" src="images/issue_tracker.png"
                             alt="Issue Tracker API" /></div>
                     <p class="project-title">FS Compilation Project</p>
@@ -338,39 +338,34 @@
                     <h4>... while also having gained experience with</h4>
                     <ul>
                         <li>Git</li>
-                        <li>Regex</li>
-                        <li>Babel</li>
-                        <li>Webpack</li>
-                        <li>TypeScript</li>
-                        <li>Jest</li>
-                        <li>React Native</li>
-                        <li>Kotlin</li>
-                        <li>Networking
-                            <ul>
-                                <li>TCP/IP</li>
-                                <li>OSI model</li>
-                            </ul>
-                        </li>
-                        <li>Unity</li>
-                        <li>Linux</li>
-                        <li>Oracle VM VirtualBox</li>
-                        <li>MSSQL</li>
                         <li>CI/CD (DevOps)
                             <ul>
                                 <li>GitHub Actions</li>
                             </ul>
                         </li>
-                    </ul>
-                </div>
-                <div class="flex-column skill-column">
-                    <h5>... and short-term exposure to</h5>
-                    <ul>
                         <li>Cloud computing
                             <ul>
                                 <li>AWS</li>
                                 <li>Azure</li>
                             </ul>
                         </li>
+                        <li>TypeScript</li>
+                        <li>Jest</li>
+                        <li>Networking</li>
+                        <li>Linux</li>
+                        <li>Oracle VM VirtualBox</li>
+                        <li>MSSQL</li>
+                        <li>Regex</li>
+                        <li>Babel</li>
+                        <li>Webpack</li>
+                        <li>Unity</li>
+                        <li>Kotlin</li>
+                        <li>React Native</li>
+                    </ul>
+                </div>
+                <div class="flex-column skill-column">
+                    <h5>... and short-term exposure to</h5>
+                    <ul>
                         <li>Docker</li>
                         <li>Kubernetes</li>
                         <li>SOLID (OOP)</li>
@@ -478,7 +473,7 @@
         // Using XMLHttpRequest instead of fetch for browser support.
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", function() { console.log(this.responseText); });
-        oReq.open("GET", "https://reittu.azurewebsites.net/api/visitors/new");
+        oReq.open("GET", "https://reittu.glitch.com/api/visitors/new");
         oReq.send();
     </script>
 </body>
