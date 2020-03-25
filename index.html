@@ -488,7 +488,7 @@
         js.type = "text/javascript";
         if (!window.fetch) js.src = "js/app.polyfilled.js";
         else js.src = "js/app.bundle.js";
-        head.ioendChild(js);
+        head.appendChild(js);
 
         // Visitor logging, active since 09.03.2020
         // Using XMLHttpRequest instead of fetch for browser support.
