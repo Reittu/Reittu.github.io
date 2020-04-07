@@ -2,7 +2,7 @@ $white: #f0f0f0;
 $gray: #252934;
 $black: #1a1a1f;
 $blue: #6fd7ff;
-$purple: #7700b4;
+$purple: #8929b9;
 $scrollthumb: #fefefe;
 $scrolltrack: #222;
 
@@ -34,7 +34,6 @@ body {
 }
 h1 {
   margin: 1rem;
-  font-size: 6rem;
 }
 h2 {
   font-size: 4.2rem;
@@ -53,6 +52,10 @@ a {
 }
 .h-100vh {
   min-height: 100vh;
+}
+.link-purple {
+  color: $purple;
+  text-decoration: underline;
 }
 
 // Special
@@ -124,6 +127,14 @@ a {
 .intro-container {
   padding: 5rem;
   text-align: center;
+  font-size: 4vw;
+  h1 {
+    font-size: 1em;
+  }
+  .intro-text,
+  .btn-cta {
+    font-size: 0.4em;
+  }
 }
 .intro-icon {
   stroke-width: 1.5px;
@@ -175,7 +186,6 @@ a {
   background: url(/svgs/cloud.svg) no-repeat center/80%, linear-gradient(180deg, $blue 90%, #fff);
 }
 .intro-text {
-  font-size: 2.3rem;
   margin: 3rem;
 }
 .bg-svg {
@@ -574,13 +584,6 @@ a {
 // Media queries
 
 @media (max-width: 1250px) {
-  .intro-container {
-    background: #000;
-    border-radius: 3em;
-  }
-  .welcome-section {
-    background: linear-gradient(180deg, $blue 90%, #fff);
-  }
   .nav-list {
     width: 80%;
   }
@@ -598,27 +601,42 @@ a {
     }
   }
 }
-@media (max-width: 460px) {
-  html {
-    font-size: 55%;
+
+@media (max-width: 767px) {
+  .welcome-section {
+    background: $blue;
   }
   .intro-container {
+    background: #000;
     border-radius: unset;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 5rem;
+    width: 100%;
+    .intro-text,
+    h1 {
+      margin: 0;
+    }
   }
   .mobile-row {
     display: block;
     text-align: left;
     padding: 0.5rem 0;
   }
-  .intro-text {
-    margin: 0;
+  .projects-section {
+    padding: 6rem 1rem;
+    background: $purple;
   }
-  h1 {
-    margin: 0;
+  .anim-cloud {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  html {
+    font-size: 55%;
   }
   .nav-list {
     width: 90%;
@@ -634,13 +652,6 @@ a {
   }
   .projects-section-header {
     font-size: 4rem;
-  }
-  .welcome-section {
-    background: $blue;
-  }
-  .projects-section {
-    padding: 6rem 1rem;
-    background: $purple;
   }
   .project {
     width: 290px;
